@@ -1,27 +1,38 @@
-import { Icon } from "../../components/icon/Icon"
-import { Section } from "../../components/section/Section"
-import { FlexWrapper } from "../../components/wrapper/FlexWrapper"
-import TestIcon from '../../assets/images/html.svg'
+import { Icon } from '../../components/icon/Icon';
+import { Section } from '../../components/section/Section';
+import { FlexWrapper } from '../../components/wrapper/FlexWrapper';
+import { Container } from '../../components/container/Container';
+import styled from 'styled-components';
+import { DataIconSkills } from '../../data/data';
+import { Fade } from 'react-awesome-reveal';
 
-export const SectionSkills = () => {
+export const SectionSkills: React.FC = () => {
   return (
-    <section>
-    <Section titleText={'My Tech Stack'} subtitleText={"Technologies I’ve been working with recently"}/>
-      <FlexWrapper justify={'center'}>
-       <Icon iconId={'htm-icon'} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={'js-icon'} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={'tailwind'} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={'vscode'} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={'sass-icon'} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={"react-icon"} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={'git-icon'} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={"css-icon"} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={"Redux"} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       <Icon iconId={"TS"} width={'120px'} height={'120px'} viewBox={"0 0 120px 120px"}/>
-       
-     </FlexWrapper>
-    </section>
-  
-
-  )
-}
+    <StyledSection id={'skills'}>
+      <Container>
+        <Section
+          titleText={'My Tech Stack'}
+          subtitleText={'Technologies I’ve been working with recently'}
+        />
+        <FlexWrapper justify={'center'} align={'center'} wrap={'wrap'} gap={'100px'}>
+          <Fade cascade={true}>
+            {DataIconSkills.map(item => {
+              return (
+                <Icon
+                  key={item.id}
+                  iconId={item.iconId}
+                  width={'120px'}
+                  height={'120px'}
+                  viewBox={'0 0 120px 120px'}
+                />
+              );
+            })}
+          </Fade>
+        </FlexWrapper>
+      </Container>
+    </StyledSection>
+  );
+};
+const StyledSection = styled.section`
+  margin-bottom: 200px;
+`;

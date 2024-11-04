@@ -1,22 +1,25 @@
-import React from 'react'
-import styled from 'styled-components';
-
-export const Menu=() => {
+import React from 'react';
+import { S } from './Menu_Styles';
+export const Menu = (props: { menuItems: Array<{ id: number; title: string; href: string }> }) => {
   return (
-    <StyledMenu>
+    <S.StyledMenu>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Tech Stack</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        {props.menuItems.map((item: { id: number; title: string; href: string }) => {
+          return (
+            <S.ListItem key={item.id}>
+              <S.NavLink to={item.href} smooth={true} offset={-140}>
+                {item.title}
+                <S.Mask>
+                  <span>{item.title}</span>
+                </S.Mask>
+                <S.Mask>
+                  <span>{item.title}</span>
+                </S.Mask>
+              </S.NavLink>
+            </S.ListItem>
+          );
+        })}
       </ul>
-      </StyledMenu>
-  )
-}
-const StyledMenu=styled.nav`
-  ul {
- display:flex;
- gap:50px
-  }
-`
+    </S.StyledMenu>
+  );
+};
