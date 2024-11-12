@@ -14,6 +14,7 @@ export const SectionSkills: React.FC = () => {
           titleText={'My Tech Stack'}
           subtitleText={'Technologies I’ve been working with recently'}
         />
+
         <FlexWrapper justify={'center'} align={'center'} wrap={'wrap'} gap={'100px'}>
           <Fade cascade={true}>
             {DataIconSkills.map(item => {
@@ -21,9 +22,9 @@ export const SectionSkills: React.FC = () => {
                 <Icon
                   key={item.id}
                   iconId={item.iconId}
-                  width={'120px'}
-                  height={'120px'}
-                  viewBox={'0 0 120px 120px'}
+                  width={'120'}
+                  height={'120'}
+                  viewBox={'0 0 120 120'}
                 />
               );
             })}
@@ -36,3 +37,29 @@ export const SectionSkills: React.FC = () => {
 const StyledSection = styled.section`
   margin-bottom: 200px;
 `;
+// import React from 'react';
+// import AliceCarousel from 'react-alice-carousel';
+// import 'react-alice-carousel/lib/alice-carousel.css';
+
+// const responsive = {
+//     0: { items: 1 },
+//     568: { items: 2 },
+//     1024: { items: 3 },
+// };
+
+// const items = [
+//     <div className="item" data-value="1">1</div>,
+//     <div className="item" data-value="2">2</div>,
+//     <div className="item" data-value="3">3</div>,
+//     <div className="item" data-value="4">4</div>,
+//     <div className="item" data-value="5">5</div>,
+// ];
+
+// const Carousel = () => (
+//     <AliceCarousel
+//         mouseTracking
+//         items={items}
+//         responsive={responsive}
+//         controlsStrategy="alternate"
+//     />
+// );

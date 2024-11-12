@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { lightTheme, theme } from '../../styles/Theme';
+import { themeMain } from '../../styles/Theme';
+
 import { FlexWrapper } from '../../components/wrapper/FlexWrapper';
 
 const Main = styled.section`
@@ -9,7 +10,7 @@ const Main = styled.section`
   font-weight: 700;
   font-size: clamp(2.625rem, 1.4098rem + 2.5316vw, 3.625rem);
   line-height: 121%;
-  color: ${lightTheme.fontAccentColor};
+  color: ${props => props.theme.fontAccentColor};
   & span:not(:first-child) {
     background-image: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
     -webkit-background-clip: text;
@@ -18,7 +19,7 @@ const Main = styled.section`
   & h1 {
   }
   & ${FlexWrapper} {
-    @media ${theme.media.mobile} {
+    @media ${themeMain.media.mobile} {
       flex-wrap: wrap;
     }
   }
@@ -29,6 +30,13 @@ const MainTitle = styled.h1`
     display: none;
   }
 `;
+const TextWrapper = styled.div`
+  max-width: 556px;
+  width: 100%;
+  min-height: 350px;
+  color: ${props => props.theme.fontAccentColor};
+`;
+const FotoWrapper = styled.div``;
 const Photo = styled.img`
   max-width: 350px;
   width: 100%;
@@ -37,5 +45,7 @@ const Photo = styled.img`
 export const S = {
   Main,
   MainTitle,
+  FotoWrapper,
   Photo,
+  TextWrapper,
 };

@@ -1,15 +1,17 @@
 import PhotoImg from '../../assets/images/50353683 1.png';
 import { Container } from '../../components/container/Container';
 import { FlexWrapper } from '../../components/wrapper/FlexWrapper';
+import ImgAroundFoto from '../../assets/images/Abstract.png';
 import { S } from './Main_Styles';
 import Typewriter from 'typewriter-effect';
+import Tilt from 'react-parallax-tilt';
 
 const Main: React.FC = () => {
   return (
     <S.Main id={'home'}>
       <Container>
         <FlexWrapper align={'center'} justify={'space-between'} gap={'20px'}>
-          <div>
+          <S.TextWrapper>
             <span>Hi 👋,</span>
             <p>
               My name is
@@ -26,10 +28,12 @@ const Main: React.FC = () => {
                 <p>I build things for web</p>
               </S.MainTitle>
             </p>
-          </div>
-          <div>
-            <S.Photo src={PhotoImg} alt="photo" />
-          </div>
+          </S.TextWrapper>
+          <Tilt>
+            <S.FotoWrapper>
+              <S.Photo src={PhotoImg} alt="photo" />
+            </S.FotoWrapper>
+          </Tilt>
         </FlexWrapper>
       </Container>
     </S.Main>

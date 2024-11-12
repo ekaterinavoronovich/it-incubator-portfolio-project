@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../../styles/Theme';
+import { themeMain } from '../../styles/Theme';
 import { Link } from 'react-scroll';
 
 const StyledMenu = styled.nav``;
@@ -11,7 +11,7 @@ const NavLink = styled(Link)`
   line-height: 130%;
   text-align: center;
   color: transparent;
-  @media ${theme.media.lg} {
+  @media ${themeMain.media.lg} {
     font-size: 18px;
   }
 `;
@@ -23,6 +23,7 @@ const Mask = styled.span`
   height: 50%;
   overflow-y: hidden;
   color: #666;
+  transition: ${themeMain.animation.transition};
   & + & {
     top: 50%;
     span {
@@ -33,6 +34,7 @@ const Mask = styled.span`
 `;
 const ListItem = styled.li`
   position: relative;
+  transition: ${themeMain.animation.transition};
   &::before {
     content: '';
     display: inline-block;

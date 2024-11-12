@@ -1,14 +1,16 @@
 export const lightTheme = {
   BackgroundColor: '#FFFFFF',
+  backgroundCardColor: '#FFFFFF',
   fontColor: '#666666',
   fontAccentColor: '#42446E',
 };
 export const darkTheme = {
   BackgroundColor: '#191919',
+  backgroundCardColor: '#363636',
   fontColor: '#ccc',
   fontAccentColor: '#ccc',
 };
-export const theme = {
+export const themeMain = {
   media: {
     lg: 'screen and (max-width:992px)',
     tablet: 'screen and (max-width:768px)',
@@ -20,5 +22,8 @@ export const theme = {
   z_index: {
     popUp: '9999',
     header_fixed: '999',
+  },
+  animation: {
+    transition: '0.2s ease-in-out',
   },
 };

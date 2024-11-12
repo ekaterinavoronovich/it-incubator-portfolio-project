@@ -6,6 +6,7 @@ import { DataProjects, TabStatusType } from '../../../data/data';
 import { TabMenu } from './TabMenu/TabMenu';
 import { DataTabs } from '../../../data/data';
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const SectionProjects: React.FC = () => {
   const [currentFilterStatus, setCurrentFilterStatus] = useState('all');
@@ -33,18 +34,28 @@ export const SectionProjects: React.FC = () => {
           currentFilterStatus={currentFilterStatus}
         />
         <FlexWrapper justify={'center'} wrap={'wrap'} gap={'37px'}>
-          {FilteredData.map(item => {
-            return (
-              <CartProject
-                src={item.src}
-                title={item.title}
-                text={item.text}
-                itemStack={`${item.itemStack},`}
-                link={item.link}
-                linkCode={item.linkCode}
-              />
-            );
-          })}
+          <AnimatePresence>
+            {FilteredData.map(item => {
+              return (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  key={item.id}
+                >
+                  <CartProject
+                    src={item.src}
+                    title={item.title}
+                    text={item.text}
+                    itemStack={`${item.itemStack}`}
+                    link={item.link}
+                    linkCode={item.linkCode}
+                  />
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
         </FlexWrapper>
       </Container>
     </section>

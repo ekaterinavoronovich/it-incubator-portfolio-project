@@ -9,7 +9,12 @@ import ImageCart6 from '../assets/images/Rectangle 8.jpg';
 export type TabStatusType = 'all' | 'landing' | 'react' | 'spa';
 
 //Data
-export const DataMenuItems = [
+export interface DataMenu {
+  id: number;
+  title: string;
+  href: string;
+}
+export const DataMenuItems: Array<DataMenu> = [
   { id: 0, title: 'Home', href: 'home' },
   { id: 1, title: 'About', href: 'about' },
   { id: 2, title: 'Tech', href: 'skills' },
@@ -79,7 +84,7 @@ export const DataProjects = [
     src: ImageCart,
     title: 'Project Tile goes here',
     text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
-    itemStack: ['HTML', 'JavaScript', 'SASS', 'React'],
+    itemStack: 'HTML, JavaScript, SASS, React',
     link: '#',
     linkCode: '#',
     type: 'spa',
@@ -89,7 +94,7 @@ export const DataProjects = [
     src: ImageCart2,
     title: 'Project Tile goes here',
     text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
-    itemStack: ['HTML', 'JavaScript', 'SASS', 'React'],
+    itemStack: 'HTML, JavaScript, SASS, React',
     link: '#',
     linkCode: '#',
     type: 'react',
@@ -99,7 +104,7 @@ export const DataProjects = [
     src: ImageCart3,
     title: 'Project Tile goes here',
     text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
-    itemStack: ['HTML', 'JavaScript', 'SASS', 'React'],
+    itemStack: 'HTML, JavaScript, SASS, React',
     link: '#',
     linkCode: '#',
     type: 'landing',
@@ -109,7 +114,7 @@ export const DataProjects = [
     src: ImageCart4,
     title: 'Project Tile goes here',
     text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
-    itemStack: ['HTML', 'JavaScript', 'SASS', 'React'],
+    itemStack: 'HTML, JavaScript, SASS, React',
     link: '#',
     linkCode: '#',
     type: 'react',
@@ -119,7 +124,7 @@ export const DataProjects = [
     src: ImageCart5,
     title: 'Project Tile goes here',
     text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
-    itemStack: ['HTML', 'JavaScript', 'SASS', 'React'],
+    itemStack: 'HTML, JavaScript, SASS, React',
     link: '#',
     linkCode: '#',
     type: 'spa',
@@ -129,7 +134,7 @@ export const DataProjects = [
     src: ImageCart6,
     title: 'Project Tile goes here',
     text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
-    itemStack: ['HTML', 'JavaScript', 'SASS', 'React'],
+    itemStack: 'HTML, JavaScript, SASS, React',
     link: '#',
     linkCode: '#',
     type: 'react',

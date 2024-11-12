@@ -18,6 +18,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   background: ${props => props.theme.BackgroundColor};
   color:${props => props.theme.fontColor};
   transition:.3s ease;

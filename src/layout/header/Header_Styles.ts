@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { lightTheme, theme } from '../../styles/Theme';
+import { themeMain } from '../../styles/Theme';
 
 //Header
 const Header = styled.header`
@@ -9,6 +9,10 @@ const Header = styled.header`
   right: 0;
   z-index: 999;
   padding-top: 40px;
+  background-color: ${props => props.theme.BackgroundColor};
+  & svg {
+    fill: ${props => props.theme.fontColor};
+  }
 `;
 const Wrapper = styled.div`
   display: inline-flex;
@@ -29,7 +33,7 @@ const MobileMenu = styled.div`
     position: absolute;
     top: -25px;
     right: 0;
-    background-color: ${lightTheme.BackgroundColor};
+    background-color: ${props => props.theme.BackgroundColor};
   }
 `;
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
@@ -38,19 +42,21 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: ${theme.z_index.popUp};
-  background-color: ${lightTheme.BackgroundColor};
-  display: none;
+  z-index: ${themeMain.z_index.popUp};
+  background-color: ${props => props.theme.BackgroundColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 0.8s ease-in-out;
   ${props =>
     props.isOpen &&
     css<{ isOpen: boolean }>`
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      transform: translateY(0);
     `}
 `;
 //BurgerButton
-const BurgerButton = styled.button<{ isOpen: boolean }>`
+const BurgerButton = styled.button<{ isOpen: boolean; theme: string }>`
   margin-right: 20px;
   border: none;
   z-index: 99999;
@@ -60,7 +66,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     display: block;
     width: 40px;
     height: 3px;
-    background-image: ${theme.color.gradient};
+    background-image: ${themeMain.color.gradient};
     position: relative;
 
     ${props =>
@@ -73,13 +79,19 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
           rgba(255, 255, 255, 1) 100%
         );
       `}
+    ${props =>
+      props.isOpen &&
+      props.theme === 'dark' &&
+      css<{ isOpen: boolean; theme: string }>`
+        background-image: linear-gradient(90deg, rgba(25, 25, 25, 1) 0%, rgba(25, 25, 25, 1) 100%);
+      `}
 
     &::after {
       content: '';
       display: block;
       width: 40px;
       height: 3px;
-      background-image: ${theme.color.gradient};
+      background-image: ${themeMain.color.gradient};
       position: absolute;
       transform: translateY(-10px);
       ${props =>
@@ -93,7 +105,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       display: block;
       width: 40px;
       height: 3px;
-      background-image: ${theme.color.gradient};
+      background-image: ${themeMain.color.gradient};
       position: absolute;
       transform: translateY(10px);
       ${props =>

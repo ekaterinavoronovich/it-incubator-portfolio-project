@@ -1,32 +1,20 @@
 import React from 'react';
 import { Icon } from '../icon/Icon';
 import { FlexWrapper } from '../wrapper/FlexWrapper';
-import styled from 'styled-components';
-import { lightTheme } from '../../styles/Theme';
+import { S } from './SocialArea_Styles';
+
 export const SocialArea = () => {
   return (
     <FlexWrapper>
-      <Link href="#">
+      <S.Link href="#">
         <Icon iconId="github-icon" width="30" height="30" viewBox="0 0 30 30" />
-      </Link>
-      <Link href="#">
+      </S.Link>
+      <S.Link href="#">
         <Icon iconId="linkedin" width="30" height="30" viewBox="0 0 30 30" />
-      </Link>
-      <Link href="#">
-        <Icon
-          iconId="twitter"
-          width="31"
-          height="31"
-          viewBox="0 0 31 31"
-          fill={lightTheme.fontAccentColor}
-        />
-      </Link>
+      </S.Link>
+      <S.Link href="#">
+        <Icon iconId="twitter" width="31" height="31" viewBox="0 0 31 31" />
+      </S.Link>
     </FlexWrapper>
   );
 };
-const Link = styled.a`
-  &:not(:last-child) {
-    margin-right: 20px;
-    fill: ${lightTheme.fontAccentColor};
-  }
-`;

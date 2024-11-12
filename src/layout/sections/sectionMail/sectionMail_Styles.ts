@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { lightTheme } from '../../../styles/Theme';
 
 const Mailarea = styled.section`
   font-family: DM Sans;
   font-weight: 700;
   font-size: clamp(2.625rem, 1.4098rem + 2.5316vw, 3.625rem);
   line-height: 121%;
-  color: ${lightTheme.fontAccentColor};
+  color: ${props => props.theme.fontAccentColor};
   text-align: center;
   margin: 200px 0 220px 0;
   & a {

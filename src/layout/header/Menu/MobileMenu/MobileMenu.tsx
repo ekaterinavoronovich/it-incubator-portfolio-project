@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { S } from '../../Header_Styles';
 import { Menu } from '../../../../components/menu/Menu';
+import { DataMenu } from '../../../../data/data';
 
-export const MobileMenu: React.FC<{ menuItems: Array<string> }> = (props: {
-  menuItems: Array<string>;
+export const MobileMenu: React.FC<{ menuItems: Array<DataMenu> }> = (props: {
+  menuItems: Array<DataMenu>;
 }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const ToggleMenuHandler = () => {

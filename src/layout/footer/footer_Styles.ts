@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lightTheme, theme } from '../../styles/Theme';
+import { themeMain } from '../../styles/Theme';
 import { FlexWrapper } from '../../components/wrapper/FlexWrapper';
 
 const Footer = styled.footer`
@@ -7,19 +7,19 @@ const Footer = styled.footer`
     display: flex;
     gap: 20px;
 
-    @media ${theme.media.lg} {
+    @media ${themeMain.media.lg} {
       display: none;
     }
   }
   & nav span {
-    color: ${lightTheme.fontAccentColor};
+    color: ${props => props.theme.fontAccentColor};
   }
   & svg {
-    fill: ${lightTheme.fontAccentColor};
+    fill: ${props => props.theme.fontAccentColor};
   }
   margin-bottom: 60px;
   & div:nth-child(2) {
-    @media ${theme.media.tablet} {
+    @media ${themeMain.media.tablet} {
       justify-content: center;
     }
   }
@@ -32,15 +32,10 @@ const AreaContact = styled.div`
     white-space: nowrap;
   }
   & ${FlexWrapper}:nth-child(1) {
-    @media ${theme.media.tablet} {
+    @media ${themeMain.media.tablet} {
       flex-direction: column;
     }
   }
-  /* & ${FlexWrapper}:nth-child(2) {
-    @media ${theme.media.tablet} {
-      align-items: center;
-    }
-  } */
 `;
 
 const Line = styled.hr`
