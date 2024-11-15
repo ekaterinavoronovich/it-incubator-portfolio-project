@@ -29,11 +29,12 @@ const Main: React.FC = () => {
               </S.MainTitle>
             </p>
           </S.TextWrapper>
-          <Tilt>
-            <S.FotoWrapper>
-              <S.Photo src={PhotoImg} alt="photo" />
-            </S.FotoWrapper>
-          </Tilt>
+          {/* <Tilt> */}
+          <S.PhotoWrapper>
+            {/* <img src={ImgAroundFoto} alt="" /> */}
+            <S.Photo src={PhotoImg} alt="photo" />
+          </S.PhotoWrapper>
+          {/* </Tilt> */}
         </FlexWrapper>
       </Container>
     </S.Main>

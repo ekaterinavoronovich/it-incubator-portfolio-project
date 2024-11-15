@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { themeMain } from '../../styles/Theme';
-
+import ImgAroundFoto from '../../assets/images/Abstract.png';
 import { FlexWrapper } from '../../components/wrapper/FlexWrapper';
 
 const Main = styled.section`
@@ -21,6 +21,8 @@ const Main = styled.section`
   & ${FlexWrapper} {
     @media ${themeMain.media.mobile} {
       flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
     }
   }
 `;
@@ -31,12 +33,32 @@ const MainTitle = styled.h1`
   }
 `;
 const TextWrapper = styled.div`
-  max-width: 556px;
+  max-width: 630px;
   width: 100%;
   min-height: 350px;
   color: ${props => props.theme.fontAccentColor};
+  @media ${themeMain.media.mobile} {
+    margin-top: 40px;
+  }
 `;
-const FotoWrapper = styled.div``;
+const PhotoWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url('${ImgAroundFoto}');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* position: relative;
+  & img:first-child {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -120px;
+    right: 250px; }*/
+`;
 const Photo = styled.img`
   max-width: 350px;
   width: 100%;
@@ -45,7 +67,7 @@ const Photo = styled.img`
 export const S = {
   Main,
   MainTitle,
-  FotoWrapper,
+  PhotoWrapper,
   Photo,
   TextWrapper,
 };

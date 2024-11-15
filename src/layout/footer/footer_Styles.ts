@@ -34,6 +34,7 @@ const AreaContact = styled.div`
   & ${FlexWrapper}:nth-child(1) {
     @media ${themeMain.media.tablet} {
       flex-direction: column;
+      gap: 0px;
     }
   }
 `;

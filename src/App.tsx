@@ -14,7 +14,7 @@ import { GotToTop } from './components/goToTop/GotToTop';
 import { lightTheme, darkTheme } from './styles/Theme';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState<string>('light');
 
   const switchTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -25,7 +25,7 @@ function App() {
       <>
         <GlobalStyle />
         <div className="App">
-          <Header />
+          <Header theme={theme} />
           <Main />
           <SectionAbout />
           <SectionSkills />

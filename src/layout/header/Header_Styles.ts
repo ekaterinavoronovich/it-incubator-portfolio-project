@@ -9,6 +9,7 @@ const Header = styled.header`
   right: 0;
   z-index: 999;
   padding-top: 40px;
+
   background-color: ${props => props.theme.BackgroundColor};
   & svg {
     fill: ${props => props.theme.fontColor};
@@ -71,7 +72,8 @@ const BurgerButton = styled.button<{ isOpen: boolean; theme: string }>`
 
     ${props =>
       props.isOpen &&
-      css<{ isOpen: boolean }>`
+      props.theme === 'light' &&
+      css<{ isOpen: boolean; theme: string }>`
         background-image: linear-gradient(
           270deg,
           rgba(0, 0, 0, 1) 0%,
