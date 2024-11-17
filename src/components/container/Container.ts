@@ -5,6 +5,6 @@ export const Container = styled.div`
   min-width: 360px;
   width: 100%;
   min-height: 100%;
-  padding: 0px 80px;
+  padding: 0px 5%;
   margin: 0 auto;
 `;

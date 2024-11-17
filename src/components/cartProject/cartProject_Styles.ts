@@ -68,21 +68,21 @@ const Title = styled.h4`
   font-size: 28px;
   line-height: 93%;
   text-align: center;
-  color: #000;
+  color: ${props => props.theme.fontColor};
 `;
 const Description = styled.p`
   font-family: var(--font-family);
   font-weight: 300;
   font-size: 18px;
   line-height: 144%;
-  color: #666;
+  color: ${props => props.theme.fontColor};
   margin: 20px 0 20px 0;
 `;
 const Stack = styled.ul`
   display: inline-flex;
   align-items: center;
   font-size: 16px;
-  color: ${lightTheme.fontAccentColor};
+  color: ${props => props.theme.fontAccentColor};
   margin-bottom: 20px;
   & li {
     font-size: 14px;
@@ -98,7 +98,7 @@ const Link = styled.a`
   line-height: 162%;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: #000;
+  color: ${props => props.theme.fontColor};
   display: inline;
   position: relative;
   &:first-child::before {

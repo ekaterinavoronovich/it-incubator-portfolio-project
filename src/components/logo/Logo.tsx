@@ -9,7 +9,7 @@ export const Logo = () => {
           scroll.scrollToTop();
         }}
       >
-        <img src={LogoSVG} alt="Logo" />
+        <img src={LogoSVG} alt="Logo" style={{ width: '100%' }} />
       </a>
     </div>
   );

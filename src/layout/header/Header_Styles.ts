@@ -69,7 +69,7 @@ const BurgerButton = styled.button<{ isOpen: boolean; theme: string }>`
     height: 3px;
     background-image: ${themeMain.color.gradient};
     position: relative;
-
+    transition: all 0.3s ease-in-out;
     ${props =>
       props.isOpen &&
       props.theme === 'light' &&
